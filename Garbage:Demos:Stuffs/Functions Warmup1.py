@@ -23,8 +23,3 @@ print(ord('E'))
 # globals().__setitem__('my_float', 0)
 
 print(my_int)
-
-a = 2
-for i in range(20):
-	a **= 2
-print(a)
