@@ -1,4 +1,8 @@
+from random import randint
+import PIL
 # Task 1
+
+
 def tasku_whan():
     print('For Loop')
     for i in range(-3, 9):
@@ -27,4 +31,18 @@ def is_odd(num):
         return False
 
 
-is_odd(num)
+for i in range(10):
+    is_odd(i)
+
+# Task 3
+
+all_rolls = []
+
+
+def roll_dice(num):
+    for i in range(num):
+        all_rolls.append(randint(1, 6))
+    print(all_rolls)
+
+
+roll_dice(30)
