@@ -1,5 +1,4 @@
 from random import randint
-import PIL
 # Task 1
 
 
@@ -46,3 +45,18 @@ def roll_dice(num):
 
 
 roll_dice(30)
+
+# Task 4
+
+number = '9798277985238764587235697523985372395632952739'
+
+
+def odds_N_evens(number):
+    even = 0
+    for i in range(len(number)):
+        if int(number[i]) % 2 == 0:
+            even += 1
+    print('Even:', even, 'Odd:', len(number) - even)
+
+
+odds_N_evens(number)
