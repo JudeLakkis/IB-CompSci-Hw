@@ -1,16 +1,6 @@
-x, y = 200, 200
-
-def add_100(x):
-	x += 100
-	# print(x)
-	return x
-
-def mins_100(y):
-	y -= 100
-	# print(y)
-	return y
-
-add_100(x)
-mins_100(y)
-print(add_100(x) + mins_100(y))
-
+add, threes = 0, 0
+for i in range(199, 401):
+    if i % 3 == 0:
+        threes += i
+    add += i
+print(add - threes)
