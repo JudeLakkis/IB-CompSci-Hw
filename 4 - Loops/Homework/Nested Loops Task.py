@@ -8,8 +8,8 @@ def box():
             print('*', end='')
 
 
-# box()
-
+box()
+print('')
 # Task 2
 
 height = 10
@@ -33,28 +33,27 @@ def single_asterisk_triangle(height):
         print((height - j) * ' ', (2 * j + 1) * '*')
 
 
-# single_asterisk_triangle(height)
+single_asterisk_triangle(height)
 
-# Task 4
+# Task 3
 
-height = 7
-width = 7
+height = 17
+width = 13
+cross = 0
 
 
-def rectangle_with_cross(height, width):
-    for i in range(height):
-        for j in range(width):
-            if (i == 1 or  # For the top row of height
-                i == height or  # For the bottom row of height
-                j == 1 or  # For the right row of width
-                j == width or  # For the left row of width
-                i == j or  # Places [*] at (width, height) creating the downward part of the cross
-                    j == (height - i + 1)):  # Places [*] at (width, (height - placement of * + 1)) creating the upward part of the cross
-
+def rectangle_with_cross(height, width, cross):
+    for i in range(width - 2):  # Range width - 2 so that it doesn't affect the sides
+        print('*', end='')
+        for j in range(width - 2):
+            if j == cross:
+                print('*', end='')
+            elif width - j - 2 == cross:  # Subtracting j so the cross prints inwards
                 print('*', end='')
             else:
-                print(' ', end='')
-        print()
+                print('', end=' ')  # Prints the spaces inside the cross
+        print('*')
+        cross += 1  # Increase the  internal cross distance
 
 
-rectangle_with_cross(height, width)
+rectangle_with_cross(height, width, cross)

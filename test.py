@@ -1,33 +1,13 @@
-# from random import uniform, randint
-# import string
-# mylist = [7, 2, 3, 4, 5]
-# print(mylist.index(7))
-
-# print("%.2f" % uniform(1.3, 1.5))
-# var1 = 0
-# var2 = 25
-# print(string.ascii_lowercase[12])
-# print(string.ascii_lowercase[randint(var1, var2)])
-
-count = 0
-while count < 10:
-    print(count * 10)
-    count += 1
-
-total = 3
-while total > -5.2:
-    print('%.2f' % total)
-    total -= 0.2
-
-
-for i in range(0, 101):
-    if i % 3 == 0:
-        print('', end='')
-    elif i % 8 == 0:
-        print('', end='')
-    else:
-        print(i)
-
-height = 5
-for i in range(height):
-    print(('*' * i))
+def black_line(square_size, a):
+    if (y / square_size) % 2 == 0:
+        for i in range(5):
+            x = 0
+            for j in range(5):
+                if (x / square_size) % 2 == 1:
+                    pygame.draw.rect(screen, (255, 255, 255), ((x, y + a), (square_size, square_size)))
+                    x += square_size
+                elif (x / square_size) % 2 == 0:
+                    pygame.draw.rect(screen, (0, 0, 0), ((x, y + a), (square_size, square_size)))
+                    x += square_size
+    a += 50
+    return a
