@@ -1,10 +1,6 @@
-import pygame
 import random
 import time
-
-screen = pygame.display.set_mode((1000, 1000))
-pygame.display.set_caption('Basic Window')
-clock = pygame.time.Clock()
+import pygame
 
 r, g, b, y = 0, 0, 0, 50
 colour = [r, g, b]
@@ -33,14 +29,19 @@ def pyra(drawn):
             drawn = True
 
 
+screen = pygame.display.set_mode((200, 300))
+pygame.display.set_caption('Basic Window')
+clock = pygame.time.Clock()
+
 running = True
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-            screen.fill((255, 255, 255))
+    screen.fill((255, 255, 255))
 
-            pyra(drawn)
+    pygame.draw.polygon(screen, (0, 0, 0), [[100, 100], [0, 200], [200, 200]], 5)
 
     pygame.display.update()
+    clock.tick(60)
 pygame.quit()
