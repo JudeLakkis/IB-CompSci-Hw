@@ -28,7 +28,7 @@ def many_asterisk_triangles(height):
 
 
 def single_asterisk_triangle(height):
-    for j in range(10):
+    for j in range(3):
             # 2n + 1
         print((height - j) * ' ', (2 * j + 1) * '*')
 

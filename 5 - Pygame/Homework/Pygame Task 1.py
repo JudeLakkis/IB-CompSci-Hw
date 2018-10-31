@@ -7,6 +7,7 @@ import itertools
 pygame.init()
 
 screen = pygame.display.set_mode((800, 800))
+pygame.display.set_caption('Pygame Task 1')
 clock = pygame.time.Clock()
 
 colours = itertools.cycle(['green', 'black'])

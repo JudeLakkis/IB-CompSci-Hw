@@ -1,4 +1,4 @@
-import random
+from random import randint
 import time
 import pygame
 
@@ -40,7 +40,9 @@ while running:
             running = False
     screen.fill((255, 255, 255))
 
-    pygame.draw.polygon(screen, (0, 0, 0), [[100, 100], [0, 200], [200, 200]], 5)
+    for j in range(10):
+            # 2n + 1
+        print((height - j) * ' ', (2 * j + 1) * '*')
 
     pygame.display.update()
     clock.tick(60)
