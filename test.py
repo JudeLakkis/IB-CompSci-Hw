@@ -1,18 +1,5 @@
-from random import randint
-
-point = []
-points = []
-
-
-def coordinates(point, points):
-    a, b = randint(0, 500), randint(0, 500)
-    point += a, b
-    c = tuple(point)
-    points.append(c)
-    point[:] = []
-
-
-for i in range(20):
-    coordinates(point, points)
-
-print(points)
+l = [1,2,3,4,5]
+if 1 in l:
+	print('1')
+if 6 not in l:
+	print('nope')

@@ -1,5 +1,1 @@
-l7 = [1, 2, 3, 4, 100]
-l7_1 = [0, 1, 4, 5, 10, 8, 7]
-
-
-def mean_kinda(x):
+from random import randint
