@@ -1,30 +1,25 @@
-from Gridworld import GridWorld
+import pygame
 from random import randint
+from Gridworld import GridWorld
 
-# 60x40 cells, each cell is 10x10 pixels
-simulation = GridWorld(60, 40, 10)
+running = True
 
-simulation.set_cell(10, 10 (255, 0, 0))
+world = GridWorld(60, 40, 10)
+suspectible = (0, 0, 255)
+infected = (255, 0, 0)
+recovered = (0, 255, 0)
 
-simulation.remove_cell(10, 10)
+for i in range(100):
+    world.set_cell(randint(0, 60), randint(0, 40), suspectible)
+    world.set_cell(randint(0, 60), randint(0, 40), infected)
+    world.set_cell(randint(0, 60), randint(0, 40), recovered)
 
-colour = simulation.get_cell(4, 2)
+for row in world.get_surroundings(1, 1, 1):
+    print(row)
 
-colours = [(255, 0, 0)(0, 255, 0)(0, 0, 255)(255, 0, 255)]
-for i in range(300):
-    simulation.get_cell(randint(0, 60), randint(0, 40), colours[randint(0, 3)])
 
-for cell in simulation.cells:
-    print(cell[0], cell[1], simulation.cells[cell])
-
-s = simulation.get_surroundings(0, 0, 2)
-
-for r in s:
-    print(r)
-
-done = False
-while not done:
-    done = simulation.process_events()
-    simulation.update()
-
-simulation.end()
+while running:
+    if world.process_events() == True:
+        break
+    world.update()
+pygame.quit()
