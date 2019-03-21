@@ -68,13 +68,13 @@ while not finish:
             inf_grid[cell[0]][cell[1]] += 1
 
         # On day 3, the infected peep lives or dies
-        if inf_grid[cell[0]][cell[1]] == 3:
+        if inf_grid[cell[0]][cell[1]] == 9:
             inf_grid[cell[0]][cell[1]] = 0
             if random() > 0.005:
                 simulation.set_cell(cell[0], cell[1], (0, 255, 0))
             else:
                 simulation.set_cell(cell[0], cell[1], (255, 0, 0))
 
-    time.sleep(0.2)
+    time.sleep(0.5)
 
 simulation.end()
